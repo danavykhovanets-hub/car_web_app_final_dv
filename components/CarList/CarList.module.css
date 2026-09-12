@@ -1,0 +1,10 @@
+/* components/CarList/CarList.module.css */
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 276px);
+  gap: 32px 29px;
+  justify-content: center;
+}

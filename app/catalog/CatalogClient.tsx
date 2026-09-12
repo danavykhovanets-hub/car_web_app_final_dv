@@ -1,8 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import { useInfiniteQuery } from "@tanstack/react-query";
 import Filters from "@/components/Filters/Filters";
 import type { FilterValues } from "@/components/Filters/Filters";
+import { fetchCars } from "@/lib/api";
 
 export default function CatalogClient() {
   const [filters, setFilters] = useState<FilterValues>({
@@ -12,17 +14,57 @@ export default function CatalogClient() {
     maxMileage: "",
   });
 
+  const {
+    data,
+    fetchNextPage,
+    hasNextPage,
+    isFetchingNextPage,
+    isLoading,
+    isError,
+  } = useInfiniteQuery({
+    queryKey: ["cars", filters],
+    queryFn: ({ pageParam }) =>
+      fetchCars({
+        brand: filters.brand || undefined,
+        price: filters.price || undefined,
+        minMileage: filters.minMileage || undefined,
+        maxMileage: filters.maxMileage || undefined,
+        page: pageParam,
+        perPage: 12,
+      }),
+    initialPageParam: 1,
+    getNextPageParam: (lastPage) => {
+      const nextPage = lastPage.page + 1;
+      return nextPage <= lastPage.totalPages ? nextPage : undefined;
+    },
+  });
+
   const handleSearch = (values: FilterValues) => {
     setFilters(values);
-    // скидання пагінації на першу порцію Load More
   };
+
+  const cars = data?.pages.flatMap((page) => page.cars) ?? [];
 
   return (
     <div>
       <Filters onSearch={handleSearch} />
-      {/* CarList зі списком машин */}
-      {/*можна тимчасово вивести обрані фільтри: */}
-      <pre>{JSON.stringify(filters, null, 2)}</pre>
+
+      {isLoading && <p>Loading...</p>}
+      {isError && <p>Something went wrong. Try again.</p>}
+
+      <ul>
+        {cars.map((car) => (
+          <li key={car.id}>
+            {car.brand} {car.model} — ${car.rentalPrice}
+          </li>
+        ))}
+      </ul>
+
+      {hasNextPage && (
+        <button onClick={() => fetchNextPage()} disabled={isFetchingNextPage}>
+          {isFetchingNextPage ? "Loading..." : "Load more"}
+        </button>
+      )}
     </div>
   );
 }

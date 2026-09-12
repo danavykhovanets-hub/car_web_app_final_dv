@@ -1,15 +1,9 @@
-interface CarsResponse {
-  cars: Car[];
-  totalCars: number;
-  page: number;
-  totalPages: number;
-}
-
+// lib/api.ts
 import axios from "axios";
 import type { Car } from "@/types/car";
 
 const api = axios.create({
-  baseURL: "https://car-rental-api.goit.study", // ⚠️ звір з "Servers" у Swagger — якщо там інший домен, поправ тут
+  baseURL: "https://car-rental-api.goit.study",
 });
 
 // --- GET /cars ---
@@ -75,5 +69,3 @@ export async function createBookingRequest(
   );
   return response.data;
 }
-
-export default CarsResponse
