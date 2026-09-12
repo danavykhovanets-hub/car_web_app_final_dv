@@ -75,3 +75,5 @@ export async function createBookingRequest(
   );
   return response.data;
 }
+
+export default CarsResponse
