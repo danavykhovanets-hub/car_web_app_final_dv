@@ -2,9 +2,10 @@
 
 import { useState } from "react";
 import { useInfiniteQuery } from "@tanstack/react-query";
-import Filters from "@/components/Filters/Filters";
-import type { FilterValues } from "@/components/Filters/Filters";
-import { fetchCars } from "@/lib/api";
+import Filters from "../../components/Filters/Filters";
+import type { FilterValues } from "../../components/Filters/Filters";
+import { fetchCars } from "../..//lib/api";
+import CarList from "../../components/CarList/CarList";
 
 export default function CatalogClient() {
   const [filters, setFilters] = useState<FilterValues>({
@@ -52,13 +53,7 @@ export default function CatalogClient() {
       {isLoading && <p>Loading...</p>}
       {isError && <p>Something went wrong. Try again.</p>}
 
-      <ul>
-        {cars.map((car) => (
-          <li key={car.id}>
-            {car.brand} {car.model} — ${car.rentalPrice}
-          </li>
-        ))}
-      </ul>
+      <CarList cars={cars} />
 
       {hasNextPage && (
         <button onClick={() => fetchNextPage()} disabled={isFetchingNextPage}>
@@ -66,5 +61,4 @@ export default function CatalogClient() {
         </button>
       )}
     </div>
-  );
-}
+  ); }
