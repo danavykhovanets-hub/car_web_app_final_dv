@@ -4,8 +4,10 @@ import { useState } from "react";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import Filters from "../../components/Filters/Filters";
 import type { FilterValues } from "../../components/Filters/Filters";
-import { fetchCars } from "../..//lib/api";
+import { fetchCars } from "../../lib/api";
 import CarList from "../../components/CarList/CarList";
+import Loader from "../../components/Loader/Loader";
+import css from "./Catalog.module.css";
 
 export default function CatalogClient() {
   const [filters, setFilters] = useState<FilterValues>({
@@ -50,15 +52,22 @@ export default function CatalogClient() {
     <div>
       <Filters onSearch={handleSearch} />
 
-      {isLoading && <p>Loading...</p>}
+      {isLoading && <Loader />}
       {isError && <p>Something went wrong. Try again.</p>}
 
       <CarList cars={cars} />
 
       {hasNextPage && (
-        <button onClick={() => fetchNextPage()} disabled={isFetchingNextPage}>
-          {isFetchingNextPage ? "Loading..." : "Load more"}
-        </button>
+        <div className={css.loadMoreWrapper}>
+          <button
+            className={css.loadMore}
+            onClick={() => fetchNextPage()}
+            disabled={isFetchingNextPage}
+          >
+            {isFetchingNextPage ? "Loading..." : "Load more"}
+          </button>
+        </div>
       )}
     </div>
-  ); }
+  );
+}

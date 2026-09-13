@@ -1,0 +1,27 @@
+.loadMoreWrapper {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0;
+}
+
+.loadMore {
+  padding: 14px 40px;
+  border: 1px solid #3470ff;
+  border-radius: 12px;
+  background: transparent;
+  color: #3470ff;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.loadMore:hover {
+  background: #3470ff;
+  color: #fff;
+}
+
+.loadMore:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
