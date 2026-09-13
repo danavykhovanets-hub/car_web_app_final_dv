@@ -31,6 +31,14 @@ export default function Filters({ onSearch }: FiltersProps) {
     onSearch({ brand, price, minMileage, maxMileage });
   };
 
+    const handleClear = () => {
+    setBrand("");
+    setPrice("");
+    setMinMileage("");
+    setMaxMileage("");
+    onSearch({ brand: "", price: "", minMileage: "", maxMileage: "" });
+  };
+
  return (
     <div className={css.filters}>
       <div className={css.field}>
@@ -89,8 +97,21 @@ export default function Filters({ onSearch }: FiltersProps) {
         </div>
       </div>
 
-      <button className={css.searchButton} onClick={handleSearch}>
-        Search
-      </button>
+       <div className={css.buttons}>
+        <button
+          type="button"
+          className={css.searchButton}
+          onClick={handleSearch}
+        >
+          Search
+        </button>
+        <button
+          type="button"
+          className={css.clearButton}
+          onClick={handleClear}
+        >
+          Clear filters
+        </button>
+      </div>
     </div>
   );}

@@ -70,3 +70,23 @@
 .searchButton:hover {
   background-color: #0b44cd;
 }
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.clearButton {
+  border: none;
+  background: none;
+  color: #8d929a;
+  font-size: 12px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.clearButton:hover {
+  color: #3470ff;
+}
