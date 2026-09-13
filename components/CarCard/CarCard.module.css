@@ -3,6 +3,10 @@
   display: flex;
   flex-direction: column;
   width: 276px;
+  background: #fff;
+  border: 1px solid #f2f2f2;
+  border-radius: 14px;
+  padding: 14px;
 }
 
 .image {
@@ -45,6 +49,7 @@
 }
 
 .button {
+  margin-top: auto;      
   display: block;
   text-align: center;
   background-color: #3470ff;
@@ -59,4 +64,30 @@
 
 .button:hover {
   background-color: #0b44cd;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 276px;
+  height: 100%;          
+}
+
+.info {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #8d929a;
+  margin: 0 0 28px 0;
+  background: #f9f9fb;
+  border-radius: 10px;
+  padding: 10px 14px;
+}
+
+.titleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 8px;
+  min-height: 48px;
 }

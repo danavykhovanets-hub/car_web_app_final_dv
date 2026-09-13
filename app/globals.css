@@ -7,3 +7,9 @@ body {
   margin: 0;
   background-color: #f8f9fa;
 }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}

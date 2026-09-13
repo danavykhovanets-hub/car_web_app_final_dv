@@ -1,8 +1,3 @@
-.wrapper {
-  background-color: #fff;
-  border-radius: 10px;
-  padding: 32px;
-}
 
 .title {
   font-size: 18px;
@@ -30,6 +25,7 @@
 
 .input,
 .textarea {
+  box-sizing: border-box;    
   width: 100%;
   padding: 14px 18px;
   border: none;
@@ -64,4 +60,12 @@
 
 .button:hover {
   background-color: #0b44cd;
+}
+
+.wrapper {
+  box-sizing: border-box;      /* padding не роздуває ширину */
+  width: 100%;                  /* на всю ширину лівої колонки */
+  background-color: #fff;
+  border-radius: 14px;
+  padding: 32px;
 }

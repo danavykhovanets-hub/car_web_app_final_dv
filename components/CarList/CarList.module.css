@@ -1,4 +1,3 @@
-/* components/CarList/CarList.module.css */
 .list {
   list-style: none;
   padding: 0;
@@ -7,4 +6,8 @@
   grid-template-columns: repeat(4, 276px);
   gap: 32px 29px;
   justify-content: center;
+}
+
+.list li {
+  display: flex;
 }

@@ -97,7 +97,7 @@ export default function Filters({ onSearch }: FiltersProps) {
         </div>
       </div>
 
-       <div className={css.buttons}>
+      <div className={css.searchWrapper}>
         <button
           type="button"
           className={css.searchButton}

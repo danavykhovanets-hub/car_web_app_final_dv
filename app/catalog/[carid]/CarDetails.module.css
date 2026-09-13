@@ -81,3 +81,10 @@
   font-size: 14px;
   color: #363535;
 }
+
+.right {
+  flex: 1;
+  background: #fff;
+  border-radius: 14px;
+  padding: 40px;
+}
