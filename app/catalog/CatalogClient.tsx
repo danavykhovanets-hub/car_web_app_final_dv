@@ -8,6 +8,7 @@ import { fetchCars } from "../../lib/api";
 import CarList from "../../components/CarList/CarList";
 import Loader from "../../components/Loader/Loader";
 import css from "./Catalog.module.css";
+import NotFoundCars from "../../components/NotFoundCars/NotFoundCars";
 
 export default function CatalogClient() {
   const [filters, setFilters] = useState<FilterValues>({
@@ -46,16 +47,24 @@ export default function CatalogClient() {
     setFilters(values);
   };
 
+    const handleReset = () => {
+    setFilters({ brand: "", price: "", minMileage: "", maxMileage: "" });
+  };
+
   const cars = data?.pages.flatMap((page) => page.cars) ?? [];
 
-  return (
+   return (
     <div>
       <Filters onSearch={handleSearch} />
 
       {isLoading && <Loader />}
       {isError && <p>Something went wrong. Try again.</p>}
 
-      <CarList cars={cars} />
+      {!isLoading && !isError && cars.length === 0 && (
+        <NotFoundCars onReset={handleReset} />
+      )}
+
+      {cars.length > 0 && <CarList cars={cars} />}
 
       {hasNextPage && (
         <div className={css.loadMoreWrapper}>
