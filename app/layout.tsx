@@ -2,6 +2,7 @@ import Header from "../components/Header/Header";
 import TanStackProvider from "../components/TanStackProvider/TanStackProvider";
 import "./globals.css";
 import type { ReactNode } from "react";
+import { Toaster } from "react-hot-toast";
 
 export const metadata = {
   title: "RentalCar",
@@ -14,7 +15,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body>
         <TanStackProvider>
           <Header />
-          {children}</TanStackProvider>
+          {children}
+           <Toaster position="top-center" />
+          </TanStackProvider>
       </body>
     </html>
   );
