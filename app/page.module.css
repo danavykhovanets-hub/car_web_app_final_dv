@@ -1,8 +1,9 @@
 .hero {
   height: calc(100vh - 72px);
   background-image: linear-gradient(
-      rgba(0, 0, 0, 0.4),
-      rgba(0, 0, 0, 0.4)
+      180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.4) 100%
     ),
     url("/hero.jpg");
   background-size: cover;
@@ -16,7 +17,7 @@
 .overlay {
   text-align: center;
   color: var(--color-white);
-  margin-bottom: 240px;
+  margin-bottom: 80px; 
 }
 
 /* ---------- Titles ---------- */
@@ -25,24 +26,26 @@
   font-size: 48px;
   font-weight: 600;
   margin: 0 0 16px;
+  letter-spacing: -0.5px;
 }
 
 .subtitle {
   font-size: 16px;
   margin: 0 0 32px;
+  opacity: 0.9;
 }
 
 /* ---------- Buttons ---------- */
 
 .button {
   display: inline-block;
-  background-color: var(--color-accent);
+  background-color: #0b93bf;
   color: var(--color-white);
   text-decoration: none;
-  padding: 14px 60px;
-  border-radius: 12px;
-  font-size: 16px;
-  font-weight: 500;
+  padding: 12px 50px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
   transition: background-color 0.2s;
 }
 
