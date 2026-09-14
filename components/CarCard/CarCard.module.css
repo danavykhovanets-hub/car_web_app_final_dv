@@ -33,7 +33,7 @@
 }
 
 .model {
-  color: #3470ff;
+  color: var(--color-accent);
 }
 
 .price {
@@ -44,7 +44,7 @@
 .info {
   font-size: 12px;
   line-height: 1.5;
-  color: #8d929a;
+  color: var(--color-text-muted);
   margin: 0 0 28px 0;
 }
 
@@ -52,7 +52,7 @@
   margin-top: auto;      
   display: block;
   text-align: center;
-  background-color: #3470ff;
+  background-color: var(--color-accent);
   color: #fff;
   text-decoration: none;
   padding: 12px 0;
@@ -63,7 +63,7 @@
 }
 
 .button:hover {
-  background-color: #0b44cd;
+  background-color: var(--color-accent-hover);
 }
 
 .card {
@@ -76,7 +76,7 @@
 .info {
   font-size: 12px;
   line-height: 1.5;
-  color: #8d929a;
+  color: var(--color-text-muted);
   margin: 0 0 28px 0;
   background: #f9f9fb;
   border-radius: 10px;

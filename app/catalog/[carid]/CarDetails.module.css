@@ -39,20 +39,20 @@
 
 .article {
   font-size: 12px;
-  color: #8d929a;
+  color:var(--color-text-muted);
 }
 
 .location {
   font-size: 14px;
-  color: #101828;
+  color: var(--color-text-muted);
   margin: 8px 0 16px;
 }
 
 .price {
   font-size: 24px;
   font-weight: 600;
-  color: #3470ff;
-  margin: 0 0 24px;
+  color: var(--color-accent);
+  mmargin-left: 24px;
 }
 
 .description {

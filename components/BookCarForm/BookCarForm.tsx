@@ -1,7 +1,7 @@
 "use client";
 
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import type { FormikHelpers } from "formik";
+import type { FormikHelpers, FieldProps } from "formik";
 import * as Yup from "yup";
 import toast from "react-hot-toast";
 import { createBookingRequest } from "@/lib/api";
@@ -62,34 +62,61 @@ export default function BookCarForm({ carId }: BookCarFormProps) {
       >
         <Form className={css.form}>
           <div className={css.formGroup}>
-            <Field
-              type="text"
-              name="name"
-              placeholder="Name*"
-              className={css.input}
-            />
+            <Field name="name">
+              {({ field, meta }: FieldProps) => (
+                <input
+                  {...field}
+                  type="text"
+                  placeholder="Name*"
+                  className={
+                    meta.touched && meta.error
+                      ? `${css.input} ${css.inputError}`
+                      : css.input
+                  }
+                />
+              )}
+            </Field>
             <ErrorMessage name="name" component="span" className={css.error} />
           </div>
 
           <div className={css.formGroup}>
-            <Field
-              type="text"
-              name="email"
-              placeholder="Email*"
-              className={css.input}
-            />
+            <Field name="email">
+              {({ field, meta }: FieldProps) => (
+                <input
+                  {...field}
+                  type="text"
+                  placeholder="Email*"
+                  className={
+                    meta.touched && meta.error
+                      ? `${css.input} ${css.inputError}`
+                      : css.input
+                  }
+                />
+              )}
+            </Field>
             <ErrorMessage name="email" component="span" className={css.error} />
           </div>
 
           <div className={css.formGroup}>
-            <Field
-              as="textarea"
+            <Field name="comment">
+              {({ field, meta }: FieldProps) => (
+                <textarea
+                  {...field}
+                  rows={5}
+                  placeholder="Comment"
+                  className={
+                    meta.touched && meta.error
+                      ? `${css.textarea} ${css.inputError}`
+                      : css.textarea
+                  }
+                />
+              )}
+            </Field>
+            <ErrorMessage
               name="comment"
-              rows={5}
-              placeholder="Comment"
-              className={css.textarea}
+              component="span"
+              className={css.error}
             />
-            <ErrorMessage name="comment" component="span" className={css.error} />
           </div>
 
           <button type="submit" className={css.button}>

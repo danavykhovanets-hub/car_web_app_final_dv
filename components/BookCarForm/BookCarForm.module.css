@@ -7,7 +7,7 @@
 
 .subtitle {
   font-size: 14px;
-  color: #8d929a;
+  color: var(--color-text-muted);
   margin: 0 0 24px;
 }
 
@@ -30,9 +30,9 @@
   padding: 14px 18px;
   border: none;
   border-radius: 12px;
-  background-color: #f7f7fb;
+  background-color:var(--color-bg-light);
   font-size: 14px;
-  color: #101828;
+  color: var(--color-text);
   font-family: inherit;
 }
 
@@ -40,9 +40,16 @@
   resize: none;
 }
 
+.inputError {
+  background-color: var (--color-error-bg);
+  border: 1px solid var (--color-error);
+  color: var(--color-text);
+}
+
 .error {
   font-size: 12px;
-  color: #d32f2f;
+  color: var(--color-error);
+  margin-top: 4px;
 }
 
 .button {
@@ -50,8 +57,8 @@
   padding: 14px 0;
   border: none;
   border-radius: 12px;
-  background-color: #3470ff;
-  color: #fff;
+  background-color: var(--color-accent);
+  color: var(--color-white);
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
@@ -59,13 +66,13 @@
 }
 
 .button:hover {
-  background-color: #0b44cd;
+  background-color: var(--color-accent-hover);
 }
 
 .wrapper {
-  box-sizing: border-box;      /* padding не роздуває ширину */
-  width: 100%;                  /* на всю ширину лівої колонки */
-  background-color: #fff;
+  box-sizing: border-box;
+  width: 100%;
+  background-color: var(--color-white);
   border-radius: 14px;
   padding: 32px;
 }

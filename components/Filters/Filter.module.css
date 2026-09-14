@@ -15,7 +15,7 @@
 .label {
   font-size: 12px;
   line-height: 1.5;
-  color: #8d929a;
+  color: var(--color-text-muted);
 }
 
 .mileageInputs {
@@ -27,14 +27,14 @@
   height: 48px;
   padding: 0 18px;
   border: none;
-  background-color: #f7f7fb;
+  background-color: var(--color-bg-light);
   font-size: 16px;
-  color: #101828;
+  color: var(--color-text);
 }
 
 .mileageInput:first-child {
   border-radius: 12px 0 0 12px;
-  border-right: 1px solid #dedee0;
+  border-right: 1px solid var(--color-border);
 }
 
 .mileageInput:last-child {
@@ -46,7 +46,7 @@
   height: 48px;
   border: none;
   border-radius: 12px;
-  background-color: #3470ff;
+  background-color: var(--color-accent);
   color: #fff;
   font-size: 16px;
   font-weight: 500;
@@ -55,7 +55,7 @@
 }
 
 .searchButton:hover {
-  background-color: #0b44cd;
+  background-color: var(--color-accent-hover);
 }
 
 .clearButton {
@@ -65,7 +65,7 @@
   transform: translateX(-50%);  
   border: none;
   background: none;
-  color: #8d929a;
+  color: var(--color-text-muted);
   font-size: 12px;
   cursor: pointer;
   white-space: nowrap;
@@ -80,11 +80,11 @@
   width: 204px;
   height: 48px;
   padding: 0 18px;
-  border: 1px solid #dedee0;     
+  border: 1px solid var(--color-border);     
   border-radius: 12px;
   background-color: #fff;          
   font-size: 16px;
-  color: #101828;
+  color: var(--color-text);
   cursor: pointer;
   appearance: none;
 }
@@ -93,10 +93,10 @@
   width: 160px;
   height: 48px;
   padding: 0 18px;
-  border: 1px solid #dedee0;       
+  border: 1px solid var(--color-border);       
   background-color: #fff;          
   font-size: 16px;
-  color: #101828;
+  color:var(--color-text);
 }
 
 .mileageInput:first-child {

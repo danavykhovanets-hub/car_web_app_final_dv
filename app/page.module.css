@@ -1,4 +1,3 @@
-/* app/page.module.css */
 .hero {
   height: calc(100vh - 72px);
   background-image: linear-gradient(
@@ -10,8 +9,8 @@
   background-position: center;
   display: flex;
   align-items: center;
-  justify-content: flex-end;   /* було center → стало flex-end */
-  flex-direction: column;      /* додати — щоб flex-end працював по вертикалі */
+  justify-content: flex-end;   
+  flex-direction: column;     
   padding-bottom: 140px;  
 }
 
@@ -33,8 +32,8 @@
 
 .button {
   display: inline-block;
-  background-color: #3470ff;
-  color: #fff;
+  background-color: var(--color-accent);
+  color: var (--color-bg-light);
   text-decoration: none;
   padding: 14px 60px;
   border-radius: 12px;
@@ -44,11 +43,11 @@
 }
 
 .button:hover {
-  background-color: #0b44cd;
+  background-color: var(--color-accent-hover);
 }
 
 .overlay {
   text-align: center;
   color: #fff;
-  margin-bottom: 100px;   /* підняти текст від низу */
+  margin-bottom: 100px;
 }

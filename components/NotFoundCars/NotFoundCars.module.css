@@ -20,7 +20,7 @@
 
 .text {
   font-size: 14px;
-  color: #8d929a;
+  color: var(--color-text-muted);
   max-width: 300px;
   line-height: 1.5;
   margin: 0 0 24px;
@@ -28,10 +28,10 @@
 
 .button {
   padding: 12px 32px;
-  border: 1px solid #dedee0;
+  border: 1px solid var(--color-border);
   border-radius: 12px;
   background: transparent;
-  color: #101828;
+  color: var(--color-text);
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
@@ -39,6 +39,6 @@
 }
 
 .button:hover {
-  border-color: #3470ff;
-  color: #3470ff;
+  border-color: var(--color-accent);
+  color: var(--color-accent);
 }
