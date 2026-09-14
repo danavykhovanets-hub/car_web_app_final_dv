@@ -10,6 +10,7 @@ import Loader from "../../components/Loader/Loader";
 import css from "./Catalog.module.css";
 import NotFoundCars from "../../components/NotFoundCars/NotFoundCars";
 
+
 export default function CatalogClient() {
   const [filters, setFilters] = useState<FilterValues>({
     brand: "",

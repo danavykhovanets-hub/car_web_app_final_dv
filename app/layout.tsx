@@ -11,8 +11,15 @@ const inter = Inter({                             // ← 2. конфіг (тут
 });
 
 export const metadata = {
-  title: "RentalCar",
-  description: "Car rental catalog",
+  title: "RentalCar — Car Rental Service",
+  description:
+    "Rent the best cars for your trips. Wide catalog of vehicles, transparent pricing, and easy booking.",
+  openGraph: {
+    title: "RentalCar — Car Rental Service",
+    description:
+      "Rent the best cars for your trips. Wide catalog of vehicles, transparent pricing, and easy booking.",
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

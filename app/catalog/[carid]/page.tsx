@@ -6,6 +6,7 @@ import {
 import { fetchCarById } from "@/lib/api";
 import CarDetailsClient from "./CarDetails.client";
 
+
 interface PageProps {
   params: Promise<{ carId: string }>;
 }
@@ -16,6 +17,11 @@ export async function generateMetadata({ params }: PageProps) {
   return {
     title: `${car.brand} ${car.model} | RentalCar`,
     description: car.description,
+    openGraph: {
+      title: `${car.brand} ${car.model} | RentalCar`,
+      description: car.description,
+      images: [{ url: car.img }],
+    },
   };
 }
 
