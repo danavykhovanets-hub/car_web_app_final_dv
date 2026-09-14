@@ -14,11 +14,6 @@
   padding-bottom: 140px;  
 }
 
-.overlay {
-  text-align: center;
-  color: #fff;
-}
-
 .title {
   font-size: 48px;
   font-weight: 600;
@@ -33,7 +28,7 @@
 .button {
   display: inline-block;
   background-color: var(--color-accent);
-  color: var (--color-bg-light);
+  color: var(--color-white);
   text-decoration: none;
   padding: 14px 60px;
   border-radius: 12px;
@@ -48,6 +43,6 @@
 
 .overlay {
   text-align: center;
-  color: var (--color-white);
+  color: var(--color-white);
   margin-bottom: 100px;
 }
