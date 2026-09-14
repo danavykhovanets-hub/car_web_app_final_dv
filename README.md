@@ -10,13 +10,13 @@ Markdown
 ## Screenshots
 
 ### Home Page
-![Home Page](/screenshots/home.png)
+![Home Page](./public/screenshots/home.png)
 
 ### Catalog Page
-![Catalog Page](/screenshots/catalog.png)
+![Catalog Page](./public/screenshots/catalog.png)
 
 ### Car Details Page
-![Car Details Page](/screenshots/car-details.png)
+![Car Details Page](./public/screenshots/car-details.png)
 
 ## Features
 
