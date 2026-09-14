@@ -1,11 +1,13 @@
+/* ---------- Header ---------- */
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 24px 64px;
-  background-color: #fff;
+  background-color: var(--color-white);
 }
 
+/* ---------- Logo ---------- */
 .logo {
   font-size: 16px;
   font-weight: 700;
@@ -17,15 +19,18 @@
   color: var(--color-accent);
 }
 
+/* ---------- Navigation ---------- */
 .nav {
   display: flex;
   gap: 32px;
 }
 
 .link {
+  position: relative;
   font-size: 16px;
   color: var(--color-text);
   text-decoration: none;
+  padding-bottom: 4px;
   transition: color 0.2s;
 }
 
@@ -34,8 +39,22 @@
 }
 
 .activeLink {
+  position: relative;
   font-size: 16px;
   color: var(--color-accent);
   text-decoration: none;
   font-weight: 500;
+  padding-bottom: 4px;
+}
+
+/* underline under active link and on hover */
+.activeLink::after,
+.link:hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background-color: var(--color-accent);
 }

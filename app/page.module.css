@@ -9,10 +9,17 @@
   background-position: center;
   display: flex;
   align-items: center;
-  justify-content: flex-end;   
-  flex-direction: column;     
-  padding-bottom: 140px;  
+  justify-content: flex-end;
+  flex-direction: column;
 }
+
+.overlay {
+  text-align: center;
+  color: var(--color-white);
+  margin-bottom: 240px;
+}
+
+/* ---------- Titles ---------- */
 
 .title {
   font-size: 48px;
@@ -24,6 +31,8 @@
   font-size: 16px;
   margin: 0 0 32px;
 }
+
+/* ---------- Buttons ---------- */
 
 .button {
   display: inline-block;
@@ -39,10 +48,4 @@
 
 .button:hover {
   background-color: var(--color-accent-hover);
-}
-
-.overlay {
-  text-align: center;
-  color: var(--color-white);
-  margin-bottom: 100px;
 }

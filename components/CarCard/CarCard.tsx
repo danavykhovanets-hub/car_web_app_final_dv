@@ -1,4 +1,3 @@
-// components/CarCard/CarCard.tsx
 import Link from "next/link";
 import type { Car } from "@/types/car";
 import css from "./CarCard.module.css";

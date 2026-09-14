@@ -3,9 +3,10 @@ import TanStackProvider from "../components/TanStackProvider/TanStackProvider";
 import "./globals.css";
 import type { ReactNode } from "react";
 import { Toaster } from "react-hot-toast";
-import { Inter } from "next/font/google";        // ← 1. імпорт (з рештою імпортів)
+import { Inter } from "next/font/google";
+import "modern-normalize/modern-normalize.css"
 
-const inter = Inter({                             // ← 2. конфіг (тут, поза функцією)
+const inter = Inter({                             
   subsets: ["latin", "cyrillic"],
   variable: "--font-inter",
 });
@@ -24,7 +25,7 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={inter.variable}>    {/* ← 3. навісити на html */}
+    <html lang="en" className={inter.variable}>
       <body>
         <TanStackProvider>
           <Header />

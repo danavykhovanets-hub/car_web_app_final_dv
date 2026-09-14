@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { fetchCarFilters } from "@/lib/api";
-import css from "./Filter.module.css";
+import css from "./Filters.module.css";
 
 export interface FilterValues {
   brand: string;

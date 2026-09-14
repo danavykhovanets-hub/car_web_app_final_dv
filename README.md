@@ -6,6 +6,18 @@ A car rental web application where users can browse a catalog of vehicles, filte
 
 [View the live application](https://car-web-app-final-dv.vercel.app/)
 
+Markdown
+## Screenshots
+
+### Home Page
+![Home Page](/screenshots/home.png)
+
+### Catalog Page
+![Catalog Page](/screenshots/catalog.png)
+
+### Car Details Page
+![Car Details Page](/screenshots/car-details.png)
+
 ## Features
 
 - **Home page** with a hero section and a call-to-action leading to the catalog.
@@ -65,24 +77,4 @@ To create a production build:
 ​```bash
 npm run build
 npm run start
-​```
-
-## Project Structure
-
-​```
-app/
-  page.tsx              — Home page
-  catalog/
-    page.tsx            — Catalog page
-    CatalogClient.tsx   — catalog logic (filters, infinite query)
-    [carId]/
-      page.tsx          — car details (server component, metadata)
-      CarDetails.client.tsx
-components/
-  Header, Filters, CarCard, CarList,
-  BookCarForm, Loader, NotFoundCars, TanStackProvider
-lib/
-  api.ts                — API functions
-types/
-  car.ts                — TypeScript types
 ​```

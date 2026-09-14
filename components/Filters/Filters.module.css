@@ -1,3 +1,4 @@
+/* ---------- Filters layout ---------- */
 .filters {
   display: flex;
   align-items: flex-end;
@@ -18,6 +19,21 @@
   color: var(--color-text-muted);
 }
 
+/* ---------- Brand / Price select ---------- */
+.select {
+  width: 204px;
+  height: 48px;
+  padding: 0 18px;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background-color: var(--color-white);
+  font-size: 16px;
+  color: var(--color-text);
+  cursor: pointer;
+  appearance: none;
+}
+
+/* ---------- Mileage inputs (From / To) ---------- */
 .mileageInputs {
   display: flex;
 }
@@ -26,19 +42,26 @@
   width: 160px;
   height: 48px;
   padding: 0 18px;
-  border: none;
-  background-color: var(--color-bg-light);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-white);
   font-size: 16px;
   color: var(--color-text);
 }
 
 .mileageInput:first-child {
   border-radius: 12px 0 0 12px;
-  border-right: 1px solid var(--color-border);
+  border-right: none;
 }
 
 .mileageInput:last-child {
   border-radius: 0 12px 12px 0;
+}
+
+/* ---------- Search / Clear buttons ---------- */
+.searchWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .searchButton {
@@ -47,7 +70,7 @@
   border: none;
   border-radius: 12px;
   background-color: var(--color-accent);
-  color: #fff;
+  color: var(--color-white);
   font-size: 16px;
   font-weight: 500;
   cursor: pointer;
@@ -59,10 +82,10 @@
 }
 
 .clearButton {
-  position: absolute;      
-  top: calc(100% + 8px);   
+  position: absolute;
+  top: calc(100% + 8px);
   left: 50%;
-  transform: translateX(-50%);  
+  transform: translateX(-50%);
   border: none;
   background: none;
   color: var(--color-text-muted);
@@ -73,43 +96,5 @@
 }
 
 .clearButton:hover {
-  color: #3470ff;
-}
-
-.select {
-  width: 204px;
-  height: 48px;
-  padding: 0 18px;
-  border: 1px solid var(--color-border);     
-  border-radius: 12px;
-  background-color: #fff;          
-  font-size: 16px;
-  color: var(--color-text);
-  cursor: pointer;
-  appearance: none;
-}
-
-.mileageInput {
-  width: 160px;
-  height: 48px;
-  padding: 0 18px;
-  border: 1px solid var(--color-border);       
-  background-color: #fff;          
-  font-size: 16px;
-  color:var(--color-text);
-}
-
-.mileageInput:first-child {
-  border-radius: 12px 0 0 12px;
-  border-right: none;              
-}
-
-.mileageInput:last-child {
-  border-radius: 0 12px 12px 0;
-}
-
-.searchWrapper {
-  position: relative;   
-  display: flex;
-  flex-direction: column;
+  color: var(--color-accent);
 }
