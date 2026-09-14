@@ -4,6 +4,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import type { FormikHelpers, FieldProps } from "formik";
 import * as Yup from "yup";
 import toast from "react-hot-toast";
+import { FiAlertCircle } from "react-icons/fi";
 import { createBookingRequest } from "@/lib/api";
 import css from "./BookCarForm.module.css";
 
@@ -28,9 +29,7 @@ const validationSchema = Yup.object({
     .min(2, "Name is too short")
     .max(50, "Name is too long")
     .required("Name is required"),
-  email: Yup.string()
-    .email("Invalid email")
-    .required("Email is required"),
+  email: Yup.string().email("Invalid email").required("Email is required"),
   comment: Yup.string().max(500, "Comment is too long"),
 });
 
@@ -64,16 +63,21 @@ export default function BookCarForm({ carId }: BookCarFormProps) {
           <div className={css.formGroup}>
             <Field name="name">
               {({ field, meta }: FieldProps) => (
-                <input
-                  {...field}
-                  type="text"
-                  placeholder="Name*"
-                  className={
-                    meta.touched && meta.error
-                      ? `${css.input} ${css.inputError}`
-                      : css.input
-                  }
-                />
+                <div className={css.inputWrapper}>
+                  <input
+                    {...field}
+                    type="text"
+                    placeholder="Name*"
+                    className={
+                      meta.touched && meta.error
+                        ? `${css.input} ${css.inputError}`
+                        : css.input
+                    }
+                  />
+                  {meta.touched && meta.error && (
+                    <FiAlertCircle className={css.errorIcon} />
+                  )}
+                </div>
               )}
             </Field>
             <ErrorMessage name="name" component="span" className={css.error} />
@@ -82,16 +86,21 @@ export default function BookCarForm({ carId }: BookCarFormProps) {
           <div className={css.formGroup}>
             <Field name="email">
               {({ field, meta }: FieldProps) => (
-                <input
-                  {...field}
-                  type="text"
-                  placeholder="Email*"
-                  className={
-                    meta.touched && meta.error
-                      ? `${css.input} ${css.inputError}`
-                      : css.input
-                  }
-                />
+                <div className={css.inputWrapper}>
+                  <input
+                    {...field}
+                    type="text"
+                    placeholder="Email*"
+                    className={
+                      meta.touched && meta.error
+                        ? `${css.input} ${css.inputError}`
+                        : css.input
+                    }
+                  />
+                  {meta.touched && meta.error && (
+                    <FiAlertCircle className={css.errorIcon} />
+                  )}
+                </div>
               )}
             </Field>
             <ErrorMessage name="email" component="span" className={css.error} />
@@ -100,16 +109,21 @@ export default function BookCarForm({ carId }: BookCarFormProps) {
           <div className={css.formGroup}>
             <Field name="comment">
               {({ field, meta }: FieldProps) => (
-                <textarea
-                  {...field}
-                  rows={5}
-                  placeholder="Comment"
-                  className={
-                    meta.touched && meta.error
-                      ? `${css.textarea} ${css.inputError}`
-                      : css.textarea
-                  }
-                />
+                <div className={css.inputWrapper}>
+                  <textarea
+                    {...field}
+                    rows={5}
+                    placeholder="Comment"
+                    className={
+                      meta.touched && meta.error
+                        ? `${css.textarea} ${css.inputError}`
+                        : css.textarea
+                    }
+                  />
+                  {meta.touched && meta.error && (
+                    <FiAlertCircle className={css.errorIconTextarea} />
+                  )}
+                </div>
               )}
             </Field>
             <ErrorMessage

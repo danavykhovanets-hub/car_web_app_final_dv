@@ -48,6 +48,6 @@
 
 .overlay {
   text-align: center;
-  color: #fff;
+  color: var (--color-white);
   margin-bottom: 100px;
 }

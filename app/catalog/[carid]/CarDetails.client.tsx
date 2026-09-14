@@ -4,6 +4,14 @@ import { useQuery } from "@tanstack/react-query";
 import { fetchCarById } from "@/lib/api";
 import BookCarForm from "@/components/BookCarForm/BookCarForm";
 import css from "./CarDetails.module.css";
+import { FiCheckCircle } from "react-icons/fi";
+import {
+  BsCalendar4,
+  BsCarFront,
+  BsFuelPump,
+  BsGear,
+} from "react-icons/bs";
+import { PiSpeedometer } from "react-icons/pi";
 
 interface CarDetailsClientProps {
   carId: string;
@@ -53,7 +61,10 @@ export default function CarDetailsClient({ carId }: CarDetailsClientProps) {
           <h3 className={css.blockTitle}>Rental Conditions:</h3>
           <ul className={css.list}>
             {car.rentalConditions.map((item) => (
-              <li key={item}>{item}</li>
+              <li key={item} className={css.listItem}>
+                <FiCheckCircle className={css.checkIcon} />
+                {item}
+              </li>
             ))}
           </ul>
         </div>
@@ -61,21 +72,37 @@ export default function CarDetailsClient({ carId }: CarDetailsClientProps) {
         <div className={css.block}>
           <h3 className={css.blockTitle}>Car Specifications:</h3>
           <ul className={css.list}>
-            <li>Year: {car.year}</li>
-            <li>Type: {car.type}</li>
-            <li>Fuel Consumption: {car.fuelConsumption}</li>
-            <li>Engine: {car.engine}</li>
-            <li>Mileage: {car.mileage.toLocaleString("uk-UA")} km</li>
+            <li className={css.listItem}>
+              <BsCalendar4 className={css.specIcon} />
+              Year: {car.year}
+            </li>
+            <li className={css.listItem}>
+              <BsCarFront className={css.specIcon} />
+              Type: {car.type}
+            </li>
+            <li className={css.listItem}>
+              <BsFuelPump className={css.specIcon} />
+              Fuel Consumption: {car.fuelConsumption}
+            </li>
+            <li className={css.listItem}>
+              <BsGear className={css.specIcon} />
+              Engine: {car.engine}
+            </li>
+            <li className={css.listItem}>
+              <PiSpeedometer className={css.specIcon} />
+              Mileage: {car.mileage.toLocaleString("uk-UA")} km
+            </li>
           </ul>
         </div>
 
         <div className={css.block}>
-          <h3 className={css.blockTitle}>
-            Accessories and functionalities:
-          </h3>
+          <h3 className={css.blockTitle}>Accessories and functionalities:</h3>
           <ul className={css.list}>
             {car.features.map((item) => (
-              <li key={item}>{item}</li>
+              <li key={item} className={css.listItem}>
+                <FiCheckCircle className={css.checkIcon} />
+                {item}
+              </li>
             ))}
           </ul>
         </div>

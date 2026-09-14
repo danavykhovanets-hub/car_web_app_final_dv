@@ -41,8 +41,8 @@
 }
 
 .inputError {
-  background-color: var (--color-error-bg);
-  border: 1px solid var (--color-error);
+  background-color: var(--color-error-bg);
+  border: 1px solid var(--color-error);
   color: var(--color-text);
 }
 
@@ -75,4 +75,28 @@
   background-color: var(--color-white);
   border-radius: 14px;
   padding: 32px;
+}
+
+.inputWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.errorIcon {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-error);
+  font-size: 18px;
+  pointer-events: none;
+}
+
+.errorIconTextarea {
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  color: var(--color-error);
+  font-size: 18px;
+  pointer-events: none;
 }

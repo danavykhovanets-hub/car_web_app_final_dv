@@ -88,3 +88,21 @@
   border-radius: 14px;
   padding: 40px;
 }
+
+.listItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.checkIcon {
+  color: var(--color-text);
+  flex-shrink: 0;
+  font-size: 16px;
+}
+
+.specIcon {
+  color: var(--color-text);
+  flex-shrink: 0;
+  font-size: 16px;
+}
